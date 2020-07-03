@@ -9,10 +9,20 @@ var usersRouter = require('./routes/users');
 let someFunction = require('./routes/httpClient');
 
 var app = express();
+var Flickr = require('flickr-sdk');
 
 someFunction.myfunc()
 document.createElement('div', )
-//test
+
+var flickr = new Flickr(process.env.FLICKR_API_KEY);
+ 
+flickr.photos.search({
+  text: 'doggo'
+}).then(function (res) {
+  console.log('yay!', res.body);
+}).catch(function (err) {
+  console.error('bonk', err);
+});
 
 
 
