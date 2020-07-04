@@ -1,4 +1,7 @@
 let Flickr = require('flickr-sdk');
+
+process.env.FLICKR_API_KEY = "00ac5f70d662304b87e7da585bbdef9d"
+
 let flickr = new Flickr(process.env.FLICKR_API_KEY);
 
 const myfunc = () => {
@@ -6,13 +9,6 @@ const myfunc = () => {
     text: 'doggo'
   }).then((res) => {
     res.body.photos.photo.forEach((photo) => {
-      //TODO Create dom element that display photos for each "photo" object looped
-      /**
-       *Please add code here
-       *
-       *
-       *
-       */
       console.log(photo.server)
     })
   }).catch((err) => {
